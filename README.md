@@ -2,6 +2,8 @@
 
 Una aplicación React + Vite para explorar y buscar apellidos hispanos, diseñada para desplegarse en GitHub Pages.
 
+🌐 **[Ver Proyecto en Vivo](https://vichuge.github.io/Apellidos-V3/)**
+
 ## Características
 
 - 🔍 Busca apellidos en tiempo real
@@ -35,43 +37,46 @@ Los archivos compilados estarán en la carpeta `dist/`.
 
 ## Deploy a GitHub Pages
 
-### Paso 1: Crear el repositorio en GitHub
-
-1. Ve a https://github.com/new
-2. Crea un repositorio llamado `Apellidos-V3`
-3. **NO** inicialices con README, .gitignore, o licencia
-
-### Paso 2: Inicializar Git localmente
+### Configuración Inicial
 
 ```bash
-cd /home/vichuge/proyectos/Apellidos-V3
+# 1. Inicializar Git
 git init
 git add .
 git commit -m "Initial commit"
 git branch -M main
+
+# 2. Conectar con repositorio remoto
 git remote add origin https://github.com/vichuge/Apellidos-V3.git
 git push -u origin main
-```
 
-### Paso 3: Deploy automático
-
-```bash
+# 3. Configurar GitHub Actions (opcional) o 4. Deploy inicial
 npm run deploy
 ```
 
-Este comando:
-1. Construye la aplicación (`npm run build`)
-2. Crea una rama `gh-pages`
-3. Sube los archivos estáticos a GitHub Pages
+### Actualizar GitHub Pages
 
-### Paso 4: Configurar GitHub Pages
+Para actualizar el proyecto en producción después de hacer cambios:
 
-1. Ve a Settings → Pages de tu repositorio
-2. Bajo "Source", selecciona "Deploy from a branch"
-3. Elige la rama `gh-pages` y carpeta `/ (root)`
-4. Guarda los cambios
+```bash
+# 1. Asegúrate de que tus cambios estén en main
+git add .
+git commit -m "Descripción de tus cambios"
+git push origin main
 
-Tu aplicación estará disponible en: **https://vichuge.github.io/Apellidos-V3/**
+# 2. Deploya a GitHub Pages
+npm run deploy
+```
+
+**¡Listo!** Tu proyecto se actualizará en: https://vichuge.github.io/Apellidos-V3/
+
+El comando `npm run deploy`:
+- Ejecuta `generate-manifest.js` para actualizar los PDFs
+- Compila la aplicación con `vite build`
+- Crea/actualiza la rama `gh-pages`
+- Publica los archivos en GitHub Pages
+
+**Nota:** GitHub Pages puede tardar 1-2 minutos en actualizar después del deploy.
 
 ## Estructura del proyecto
 
