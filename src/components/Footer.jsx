@@ -1,4 +1,4 @@
-import { Github } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -6,16 +6,16 @@ export default function Footer() {
   return (
     <footer className="bg-custom-green text-white py-8 mt-16 text-center">
       <p className="mb-2">
-        © {year} Vichuge. Todos los derechos reservados.
+        © {year} Todos los derechos reservados. Aplicación hecha por
       </p>
       <a
-        href="https://github.com/vichuge"
+        href="https://www.linkedin.com/in/vpa12345/"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity underline underline-offset-2"
       >
-        <Github className="w-5 h-5" />
-        GitHub
+        <Linkedin className="w-5 h-5" />
+        Victor Pacheco
       </a>
     </footer>
   );
